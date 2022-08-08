@@ -11,7 +11,14 @@ export class MainviewComponent implements OnInit {
   constructor(public dataService:DataService) { }
 
   ngOnInit(): void {
+    this.dataService.currentDataModel.subscribe(data => {
+      console.warn(data);
+    })
+    this.dataService.getData("cokolwiek");
+  }
 
+  buttonGET(){
+    this.dataService.updateDataModel(this.dataService.dataModel);
     this.dataService.getData("cokolwiek");
   }
 
