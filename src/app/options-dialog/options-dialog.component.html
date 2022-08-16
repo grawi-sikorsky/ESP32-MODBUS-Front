@@ -1,3 +1,41 @@
 <mat-dialog-content>
-    <div class="container-fluid">DIALOG W PYTKE!</div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col" style="text-align: center;">
+                <h3>Remote ESP32 Setup</h3>
+            </div>
+        </div>
+        <div class="row"> 
+            <mat-form-field appearance="outline" class="mat-form-field-outcome">
+                <mat-label>ModbusID: </mat-label>
+                <input matInput placeholder="???" [(ngModel)]="dataService.setupModel.modbusID">
+                <!-- <mat-icon matSuffix>attach_money</mat-icon> -->
+            </mat-form-field>
+        </div>
+        <div class="row"> 
+            <mat-form-field appearance="outline" class="mat-form-field-outcome">
+                <mat-label>Readings update interval: </mat-label>
+                <input matInput placeholder="???" [(ngModel)]="dataService.setupModel.readingUpdateInterval">
+                <!-- <mat-icon matSuffix>attach_money</mat-icon> -->
+            </mat-form-field>
+        </div>
+        <div class="row"> 
+            <mat-form-field appearance="outline" class="mat-form-field-outcome">
+                <mat-label>POST update interval: </mat-label>
+                <input matInput placeholder="???" [(ngModel)]="dataService.setupModel.postUpdateInterval">
+                <!-- <mat-icon matSuffix>attach_money</mat-icon> -->
+            </mat-form-field>
+        </div>
+        <div class="row"> 
+            <mat-form-field appearance="outline" class="mat-form-field-outcome">
+                <mat-label>GET settings interval: </mat-label>
+                <input matInput placeholder="???" [(ngModel)]="dataService.setupModel.setupUpdateInterval">
+                <!-- <mat-icon matSuffix>attach_money</mat-icon> -->
+            </mat-form-field>
+        </div>
+
+        <div class="row" style="display: center;">
+            <button mat-flat-button color="warn" (click)="onSaveSettings()"> <mat-icon>settings</mat-icon> Zapisz ustawienia na urzadzeniu zdalnym </button>
+        </div>
+    </div>
 </mat-dialog-content>

@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OptionsDialogComponent } from './options-dialog/options-dialog.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { OptionsDialogComponent } from './options-dialog/options-dialog.componen
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     MaterialModule,
     HttpClientModule,

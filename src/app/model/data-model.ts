@@ -19,3 +19,10 @@ export class DataModel {
     espTemperature?:        string;
     espPressure?:           string;
 }
+
+export class SetupModel{
+    modbusID?:              string;
+    readingUpdateInterval?:  string;
+    postUpdateInterval?:     string;
+    setupUpdateInterval?:    string;
+}

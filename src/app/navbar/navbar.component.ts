@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { OptionsDialogComponent } from '../options-dialog/options-dialog.component';
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,13 +10,17 @@ import { OptionsDialogComponent } from '../options-dialog/options-dialog.compone
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public setupDialog:MatDialog) { }
+  constructor(public dataService:DataService, public setupDialog:MatDialog) { }
 
   ngOnInit(): void {
+    this.dataService.currentDataModel.subscribe(data => {
+      console.warn(data);
+    })
+    this.dataService.getData("cokolwiek");
   }
 
   public onSettingsClick(): void {
-    const dialogRef = this.setupDialog.open(OptionsDialogComponent, {width:"85%", height:"85%" });
+    const dialogRef = this.setupDialog.open(OptionsDialogComponent, {width:"45%", height:"55%" });
     dialogRef.afterClosed().subscribe(data=>{
       console.log("Setup Dialog zamkniety");
     })

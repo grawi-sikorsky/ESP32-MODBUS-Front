@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-options-dialog',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OptionsDialogComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dataService:DataService) { }
 
   ngOnInit(): void {
+    this.dataService.currentDataModel.subscribe(data => {
+      console.warn(data);
+    })
+    this.dataService.getSetup("cokolwiek");
+  }
+
+  onSaveSettings(){
+    this.dataService.updateSetupModel(this.dataService.setupModel);
+    this.dataService.postSetup();
   }
 
 }
