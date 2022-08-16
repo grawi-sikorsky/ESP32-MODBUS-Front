@@ -35,7 +35,10 @@
         </div>
 
         <div class="row" style="display: center;">
-            <button mat-flat-button color="warn" (click)="onSaveSettings()"> <mat-icon>settings</mat-icon> Zapisz ustawienia na urzadzeniu zdalnym </button>
+            <button mat-raised-button mat-dialog-close color="primary" (click)="onSaveSettings()"> <mat-icon>settings</mat-icon> Zapisz ustawienia na urzadzeniu zdalnym </button>
+            <div style="padding-top: 10px; padding-bottom: 10px;"><mat-divider></mat-divider></div>
+            <button mat-raised-button mat-dialog-close color=""><mat-icon>close</mat-icon> Close</button>
+            <div style="padding-top: 5px; padding-bottom: 5px;"></div>
         </div>
     </div>
 </mat-dialog-content>

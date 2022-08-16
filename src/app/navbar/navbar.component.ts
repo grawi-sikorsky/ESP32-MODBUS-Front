@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
   }
 
   public onSettingsClick(): void {
-    const dialogRef = this.setupDialog.open(OptionsDialogComponent, {width:"45%", height:"55%" });
+    const dialogRef = this.setupDialog.open(OptionsDialogComponent, {width:"35%"});
     dialogRef.afterClosed().subscribe(data=>{
       console.log("Setup Dialog zamkniety");
     })

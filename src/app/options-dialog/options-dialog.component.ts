@@ -20,6 +20,7 @@ export class OptionsDialogComponent implements OnInit {
   onSaveSettings(){
     this.dataService.updateSetupModel(this.dataService.setupModel);
     this.dataService.postSetup();
+    
   }
 
 }

@@ -50,6 +50,6 @@ export class DataService {
 
   public postSetup(){
     console.log(this.setupModel);
-    return this.http.post<SetupModel>( "https://modbus-back.herokuapp.com/setup", this.setupModel );
+    return this.http.post<SetupModel>( "https://modbus-back.herokuapp.com/setup", this.setupModel ).subscribe();
   }
 }
