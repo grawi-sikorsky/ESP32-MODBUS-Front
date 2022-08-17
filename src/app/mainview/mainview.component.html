@@ -1,27 +1,13 @@
 <div class="container-fluid">
 
     <div class="row">
+        <app-chart></app-chart>
 
         <div class="col">
-            <div class="col">
-                <div *ngFor="let item of dataService.dataModel">
-                    <p> modbusID: {{item.modbusID}} </p>
-                    <p> pvVoltage: {{item.pvVoltage}} </p>
-                    <p> espTemperature: {{item.espTemperature}} </p>
-                    <p> espPressure: {{item.espPressure}} </p>
-                </div>
-            </div>
             <button class="btn btn-primary" (click)="buttonGET()">
                 TestButton
             </button>
         </div>
 
-        <div class="col">
-            <app-chart></app-chart>
-        </div>
-
-    </div>
-    <div class="row">
-        <app-chart></app-chart>
     </div>
 </div>
