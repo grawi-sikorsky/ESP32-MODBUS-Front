@@ -11,7 +11,7 @@ export class OptionsDialogComponent implements OnInit {
   constructor(public dataService:DataService) { }
 
   ngOnInit(): void {
-    this.dataService.currentDataModel.subscribe(data => {
+    this.dataService.currentSetupModel.subscribe(data => {
       console.warn(data);
     })
     this.dataService.getSetup("cokolwiek");

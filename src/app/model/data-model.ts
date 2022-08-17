@@ -19,6 +19,7 @@ export class DataModel {
     espTemperature?:        string;
     espPressure?:           string;
     recordTime?:            string;
+    batteryVoltage?:        string;
 }
 
 export class SetupModel{

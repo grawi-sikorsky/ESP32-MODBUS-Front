@@ -17,17 +17,16 @@ export class ChartComponent implements OnInit {
     this.dataService.currentDataModel.subscribe(data => {
       this.chartRawData = data;
 
-      console.warn(data);
-      console.warn(this.chartRawData);
-
       this.chartRawData?.reverse().forEach(element => {
-        this.ldataList.push(element.batVoltage!);
-        this.ldataLabels.push(formatDate(element.recordTime!, 'dd/MM/yyyy', 'en-US',));
+        this.ldataList.push(Number(element.batteryVoltage!));
+        this.ldataLabels.push(formatDate(element.recordTime!, 'HH:mm:ss dd/MM/yyyy', 'en-US'));
       });
+
+      this.ldataSet.splice(-1);
 
       this.ldataSet.push({
         data: this.ldataList,
-        label: "Taki czort",
+        label: "batVoltage",
         backgroundColor: 'rgba(148,159,177,0.5)',
         borderColor: 'rgba(148,159,177,1)',
         pointBackgroundColor: 'rgba(148,159,177,1)',
@@ -38,17 +37,17 @@ export class ChartComponent implements OnInit {
       })
 
     })
-
+    console.warn(this.hotspotData);
 }
 
 chartRawData ?: DataModel[] = [];
-ldataList: string[] = [];
+ldataList: number[] = [];
 ldataLabels: string[] = [];
 ldataSet: any = [];
 
 hotspotData: ChartData<'line'> = {
   labels: this.ldataLabels,
-  datasets: this.ldataSet,
+  datasets: this.ldataSet
 };
 
 lineChartLegend = true;
@@ -59,7 +58,7 @@ chartOptions: ChartOptions = {
   plugins: {
     title: {
       display: true,
-      text: 'Mining rewards',
+      text: 'Taki czort',
     },
   },
 };
