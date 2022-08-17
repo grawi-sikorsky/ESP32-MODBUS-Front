@@ -35,7 +35,7 @@ export class DataService {
         this.updateDataModel(data);
         this.dataModel = data;
         this.dataModel.forEach( element  => {
-          console.log(element.espTemperature);
+
         });
       });
   }

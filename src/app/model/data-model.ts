@@ -18,6 +18,7 @@ export class DataModel {
     energyConsumedTotal?:   string;
     espTemperature?:        string;
     espPressure?:           string;
+    recordTime?:            string;
 }
 
 export class SetupModel{

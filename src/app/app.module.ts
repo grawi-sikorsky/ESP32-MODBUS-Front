@@ -11,13 +11,16 @@ import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OptionsDialogComponent } from './options-dialog/options-dialog.component';
 import { FormsModule } from '@angular/forms';
+import { ChartComponent } from './chart/chart.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainviewComponent,
     NavbarComponent,
-    OptionsDialogComponent
+    OptionsDialogComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     MaterialModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgChartsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

@@ -1,0 +1,12 @@
+<p>chart works!</p>
+<div class="chart-wrapper" *ngIf="ldataSet.length > 0">
+    <canvas baseChart
+    style="width: 400px; height: 200px;"
+        [data]="hotspotData"
+        [legend]="lineChartLegend" 
+        [plugins]="lineChartPlugins"
+        [options]="chartOptions"
+        [type]="'line'"
+        >
+    </canvas>
+</div>
