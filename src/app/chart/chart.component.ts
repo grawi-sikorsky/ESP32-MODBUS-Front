@@ -19,7 +19,7 @@ export class ChartComponent implements OnInit {
         this.chartRawData = data;
 
         this.chartRawData?.forEach(element => {
-          this.ldataList.push(Number(element.batteryVoltage!));
+          this.ldataList.push(Number(element.batVoltage!));
           this.ldataLabels.push(formatDate(element.recordTime!, 'HH:mm:ss dd/MM/yyyy', 'en-US'));
         });
 

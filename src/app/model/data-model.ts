@@ -3,28 +3,41 @@ export class DataModel {
     pvVoltage?:             string;
     pvCurrent?:             string;
     pvPower?:               string;
-    pvTotalChargingToday?:  string;
-    pvTotalCharging?:       string;
+    pvStatus?:              string;
+
     batVoltage?:            string;
-    batCurrent?:            string;
-    mpptTemperature?:       string;
+    batDischargeCurrent?:   string;
+    batChargingCurrent?:    string;
+    batChargingPower?:      string;
+    batRemainingPercent?:   string;
+    batTemperature?:        string;
+    batOverallCurrent?:     string;
     batStatus?:             string;
     batChargingStatus?:     string;
     batDischargingStatus?:  string;
+
+    mpptTemperature?:       string;
     loadVoltage?:           string;
     loadCurrent?:           string;
     loadPower?:             string;
-    energyConsumedToday?:   string;
-    energyConsumedTotal?:   string;
-    espTemperature?:        string;
-    espPressure?:           string;
+    loadStatus?:            string;
+
+    genTotalToday?:         string;
+    genTotalMonth?:         string;
+    genTotalYear?:          string;
+    genTotalAll?:           string;
+    consTotalToday?:        string;
+    consTotalMonth?:        string;
+    consTotalYear?:         string;
+    consTotalAll?:          string;
+
     recordTime?:            string;
     batteryVoltage?:        string;
 }
 
 export class SetupModel{
-    modbusID?:              string;
-    readingUpdateInterval?:  string;
-    postUpdateInterval?:     string;
-    setupUpdateInterval?:    string;
+    modbusID?:                  string;
+    readingUpdateInterval?:     string;
+    postUpdateInterval?:        string;
+    setupUpdateInterval?:       string;
 }
