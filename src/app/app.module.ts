@@ -13,6 +13,7 @@ import { OptionsDialogComponent } from './options-dialog/options-dialog.componen
 import { FormsModule } from '@angular/forms';
 import { ChartComponent } from './chart/chart.component';
 import { NgChartsModule } from 'ng2-charts';
+import { ChartsViewComponent } from './charts-view/charts-view.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgChartsModule } from 'ng2-charts';
     MainviewComponent,
     NavbarComponent,
     OptionsDialogComponent,
-    ChartComponent
+    ChartComponent,
+    ChartsViewComponent
   ],
   imports: [
     BrowserModule,
