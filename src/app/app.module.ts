@@ -11,8 +11,12 @@ import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OptionsDialogComponent } from './options-dialog/options-dialog.component';
 import { FormsModule } from '@angular/forms';
-import { ChartComponent } from './chart/chart.component';
+import { ChartComponent } from './charts-view/chart/chart.component';
 import { NgChartsModule } from 'ng2-charts';
+import { ChartsViewComponent } from './charts-view/charts-view.component';
+import { OveralsComponent } from './overals/overals.component';
+import { ChartCurrentComponent } from './charts-view/chart-current/chart-current.component';
+import { ChartLoadComponent } from './charts-view/chart-load/chart-load.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { NgChartsModule } from 'ng2-charts';
     MainviewComponent,
     NavbarComponent,
     OptionsDialogComponent,
-    ChartComponent
+    ChartComponent,
+    ChartsViewComponent,
+    OveralsComponent,
+    ChartCurrentComponent,
+    ChartLoadComponent
   ],
   imports: [
     BrowserModule,
