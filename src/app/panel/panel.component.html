@@ -1,0 +1,118 @@
+<div class="row">
+    <div class="col-3">
+        <mat-card class="example-card">
+            <mat-card-title>PV Stats</mat-card-title>
+            <mat-card-subtitle>Data from pv string</mat-card-subtitle>
+            <mat-card-content>
+                <mat-selection-list [multiple]="false">
+                    <mat-list-option>
+                        PV Voltage: {{lastElement.pvVoltage}} V
+                    </mat-list-option>
+                    <mat-list-option>
+                        PV Current: {{lastElement.pvCurrent}} A
+                    </mat-list-option>
+                    <mat-list-option>
+                        PV Power: {{lastElement.pvPower}} W
+                    </mat-list-option>
+                    <mat-list-option>
+                        PV Status: {{lastElement.pvStatus}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div class="col-6">
+        <div class="row">
+            <div class="col">
+                <mat-card class="example-card">
+                    <mat-card-title>Battery Stats</mat-card-title>
+                    <mat-card-subtitle>Data from battery</mat-card-subtitle>
+                    <mat-card-content>
+                        <mat-selection-list [multiple]="false">
+                            <mat-list-option>
+                                Battery voltage: {{lastElement.batVoltage}} V
+                            </mat-list-option>
+                            <mat-list-option>
+                                Battery charging current: {{lastElement.batChargingCurrent}} A
+                            </mat-list-option>
+                            <mat-list-option>
+                                Battery charging power: {{lastElement.batChargingPower}} W
+                            </mat-list-option>
+                            <mat-list-option>
+                                Battery discharging current: {{lastElement.batDischargeCurrent}} A
+                            </mat-list-option>
+                            <mat-list-option>
+                                Battery overal current: {{lastElement.batOverallCurrent}} A
+                            </mat-list-option>
+                        </mat-selection-list>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+            <div class="col">
+                <mat-card class="example-card">
+                    <mat-card-title>Battery Stats</mat-card-title>
+                    <mat-card-subtitle>Data from battery</mat-card-subtitle>
+                    <mat-card-content>
+                        <mat-selection-list [multiple]="false">
+                            <mat-list-option>
+                                Battery remaining percent [SOC] : {{lastElement.batRemainingPercent}} %
+                            </mat-list-option>
+                            <mat-list-option>
+                                Battery temperature: {{lastElement.batTemperature}} C
+                            </mat-list-option>
+                            <mat-list-option>
+                                Battery status: {{lastElement.batStatus}}
+                            </mat-list-option>
+                            <mat-list-option>
+                                Battery charging status: {{lastElement.batChargingStatus}}
+                            </mat-list-option>
+                            <mat-list-option>
+                                Battery discharging status: {{lastElement.batDischargingStatus}}
+                            </mat-list-option>
+
+                        </mat-selection-list>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-3">
+        <mat-card class="example-card">
+            <mat-card-title>Load Stats</mat-card-title>
+            <mat-card-subtitle>Stats on your output</mat-card-subtitle>
+            <mat-card-content>
+                <mat-selection-list [multiple]="false">
+                    <mat-list-option>
+                        Energy generated today: {{lastElement.loadVoltage}} V
+                    </mat-list-option>
+                    <mat-list-option>
+                        Energy generated this month: {{lastElement.loadCurrent}} A
+                    </mat-list-option>
+                    <mat-list-option>
+                        Energy generated this year: {{lastElement.loadPower}} W
+                    </mat-list-option>
+                    <mat-list-option>
+                        Energy generated all time: {{lastElement.loadStatus}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

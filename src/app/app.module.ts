@@ -17,6 +17,7 @@ import { ChartsViewComponent } from './charts-view/charts-view.component';
 import { OveralsComponent } from './overals/overals.component';
 import { ChartCurrentComponent } from './charts-view/chart-current/chart-current.component';
 import { ChartLoadComponent } from './charts-view/chart-load/chart-load.component';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ChartLoadComponent } from './charts-view/chart-load/chart-load.componen
     ChartsViewComponent,
     OveralsComponent,
     ChartCurrentComponent,
-    ChartLoadComponent
+    ChartLoadComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
