@@ -1,0 +1,28 @@
+<mat-card mat-card-title> Overal stats: </mat-card>
+
+<mat-selection-list [multiple]="false">
+    <mat-list-option>
+        <!-- Energy generated today: {{lastElement.genTotalToday}} kWh -->
+    </mat-list-option>
+    <mat-list-option>
+        <!-- Energy generated this month: {{lastElement!.genTotalMonth!}} kWh -->
+    </mat-list-option>
+    <mat-list-option>
+        <!-- Energy generated this year: {{lastElement.genTotalYear}} kWh -->
+    </mat-list-option>
+    <mat-list-option>
+        <!-- Energy generated all time: {{lastElement.genTotalAll}} kWh -->
+    </mat-list-option>
+    <mat-list-option>
+        <!-- Energy consumed today: {{lastElement.consTotalToday}} kWh -->
+    </mat-list-option>
+    <mat-list-option>
+        <!-- Energy consumed this month: {{lastElement.consTotalMonth}} kWh -->
+    </mat-list-option>
+    <mat-list-option>
+        <!-- Energy consumed this year: {{lastElement.consTotalYear}} kWh -->
+    </mat-list-option>
+    <mat-list-option>
+        <!-- Energy consumed this all time: {{lastElement.consTotalAll}} kWh -->
+    </mat-list-option>
+</mat-selection-list>

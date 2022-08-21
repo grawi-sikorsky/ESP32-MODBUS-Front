@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { ChartComponent } from './chart/chart.component';
 import { NgChartsModule } from 'ng2-charts';
 import { ChartsViewComponent } from './charts-view/charts-view.component';
+import { OveralsComponent } from './overals/overals.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ChartsViewComponent } from './charts-view/charts-view.component';
     NavbarComponent,
     OptionsDialogComponent,
     ChartComponent,
-    ChartsViewComponent
+    ChartsViewComponent,
+    OveralsComponent
   ],
   imports: [
     BrowserModule,

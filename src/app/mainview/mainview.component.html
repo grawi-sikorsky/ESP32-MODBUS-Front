@@ -1,13 +1,20 @@
 <div class="container-fluid">
 
     <div class="row">
-        <app-charts-view></app-charts-view>
-
-        <div class="col">
-            <button class="btn btn-primary" (click)="buttonGET()">
-                TestButton
-            </button>
+        <div class="col-4">
+            <app-overals></app-overals>
         </div>
 
+        <div class="col">
+            <app-charts-view></app-charts-view>
+        </div>
+        
     </div>
+
+    <div class="row">
+        <button class="btn btn-primary" (click)="buttonGET()">
+            TestButton
+        </button>
+    </div>
+
 </div>
