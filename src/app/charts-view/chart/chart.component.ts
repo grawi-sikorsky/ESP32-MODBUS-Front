@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DataModel } from '../model/data-model';
+import { DataModel } from '../../model/data-model';
 import { ChartData, ChartDataset, ChartOptions } from 'chart.js';
 import { formatDate } from '@angular/common';
-import { DataService } from '../service/data.service';
+import { DataService } from '../../service/data.service';
 
 @Component({
   selector: 'app-chart',
@@ -19,53 +19,64 @@ export class ChartComponent implements OnInit {
         this.chartRawData = data;
 
         this.chartRawData?.forEach(element => {
-          this.ldataList.push(Number(element.batVoltage!));
-          this.ldataList2.push(Number(element.batRemainingPercent!));
+          this.dataListBat.push(Number(element.batVoltage!));
+          this.dataListPV.push(Number(element.pvVoltage!));
+          this.dataListLoad.push(Number(element.loadVoltage!));
           this.ldataLabels.push(formatDate(element.recordTime!, 'HH:mm:ss dd/MM/yyyy', 'en-US'));
         });
 
         this.ldataSet.push({
-          data: this.ldataList,
+          data: this.dataListBat,
           label: "Battery voltage",
-          backgroundColor: 'rgba(148,159,177,0.5)',
-          borderColor: 'rgba(148,159,177,1)',
-          pointBackgroundColor: 'rgba(148,159,177,1)',
+          backgroundColor: 'rgba(120,220,140,0.5)',
+          borderColor: 'rgba(120,220,140,1)',
+          pointBackgroundColor: 'rgba(120,220,140,1)',
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgba(148,159,177,0.8)',
-          fill: 'origin',
+          pointHoverBorderColor: 'rgba(120,220,140,0.8)',
+          fill: false,
+          lineTension: 0.5,
         })
 
-        this.ldataSet2.push({
-          data: this.ldataList2,
-          label: "Battery a",
-          backgroundColor: 'rgba(148,159,177,0.5)',
-          borderColor: 'rgba(148,159,177,1)',
-          pointBackgroundColor: 'rgba(148,159,177,1)',
+        this.ldataSet.push({
+          data: this.dataListPV,
+          label: "PV voltage",
+          backgroundColor: 'rgba(202,159,177,0.5)',
+          borderColor: 'rgba(220,159,177,1)',
+          pointBackgroundColor: 'rgba(220,159,177,1)',
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
-          pointHoverBorderColor: 'rgba(148,159,177,0.8)',
+          pointHoverBorderColor: 'rgba(202,159,177,0.8)',
           fill: false,
+          lineTension: 0.5,
+        })
+
+        this.ldataSet.push({
+          data: this.dataListLoad,
+          label: "Load voltage",
+          backgroundColor: 'rgba(100,159,220,0.5)',
+          borderColor: 'rgba(100,159,220,1)',
+          pointBackgroundColor: 'rgba(100,159,220,1)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(100,159,220,0.8)',
+          fill: false,
+          lineTension: 0.5,
         })
       }
-      console.warn(this.hotspotData);
     })
   }
-  public lineChartData: ChartDataset[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-    { data: [300, 500, 900, 101, 506, 895, 340], label: 'Series B' },
-    { data: [65, 519, 800, 111, 786, 305, 40], label: 'Series C' },
-  ];
+
   chartRawData?: DataModel[] = [];
-  ldataList: number[] = [];
-  ldataList2: number[] = [];
+  dataListBat: number[] = [];
+  dataListPV: number[] = [];
+  dataListLoad: number[] = [];
   ldataLabels: string[] = [];
   ldataSet: any = [];
-  ldataSet2: any = [];
 
-  hotspotData: ChartData<'line'> = {
+  voltageChartData: ChartData<'line'> = {
     labels: this.ldataLabels,
-    datasets: [this.ldataSet],
+    datasets: this.ldataSet,
   };
 
   lineChartLegend = true;
@@ -78,6 +89,10 @@ export class ChartComponent implements OnInit {
         display: true,
         text: 'Voltage Chart',
       },
+      tooltip:{
+        mode: 'index',
+        intersect: false,
+      }
     },
   };
 
