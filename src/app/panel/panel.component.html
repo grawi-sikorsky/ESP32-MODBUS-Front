@@ -6,16 +6,16 @@
             <mat-card-content>
                 <mat-selection-list [multiple]="false">
                     <mat-list-option>
-                        PV Voltage: {{lastElement.pvVoltage}} V
+                        PV Voltage: {{liveData.pvVoltage}} V
                     </mat-list-option>
                     <mat-list-option>
-                        PV Current: {{lastElement.pvCurrent}} A
+                        PV Current: {{liveData.pvCurrent}} A
                     </mat-list-option>
                     <mat-list-option>
-                        PV Power: {{lastElement.pvPower}} W
+                        PV Power: {{liveData.pvPower}} W
                     </mat-list-option>
                     <mat-list-option>
-                        PV Status: {{lastElement.pvStatus}}
+                        PV Status: {{liveData.pvStatus}}
                     </mat-list-option>
                 </mat-selection-list>
             </mat-card-content>
@@ -34,19 +34,19 @@
                     <mat-card-content>
                         <mat-selection-list [multiple]="false">
                             <mat-list-option>
-                                Battery voltage: {{lastElement.batVoltage}} V
+                                Battery voltage: {{liveData.batVoltage}} V
                             </mat-list-option>
                             <mat-list-option>
-                                Battery charging current: {{lastElement.batChargingCurrent}} A
+                                Battery charging current: {{liveData.batChargingCurrent}} A
                             </mat-list-option>
                             <mat-list-option>
-                                Battery charging power: {{lastElement.batChargingPower}} W
+                                Battery charging power: {{liveData.batChargingPower}} W
                             </mat-list-option>
                             <mat-list-option>
-                                Battery discharging current: {{lastElement.batDischargeCurrent}} A
+                                Battery discharging current: {{liveData.batDischargeCurrent}} A
                             </mat-list-option>
                             <mat-list-option>
-                                Battery overal current: {{lastElement.batOverallCurrent}} A
+                                Battery overal current: {{liveData.batOverallCurrent}} A
                             </mat-list-option>
                         </mat-selection-list>
                     </mat-card-content>
@@ -63,19 +63,19 @@
                     <mat-card-content>
                         <mat-selection-list [multiple]="false">
                             <mat-list-option>
-                                Battery remaining percent [SOC] : {{lastElement.batRemainingPercent}} %
+                                Battery remaining percent [SOC] : {{liveData.batRemainingPercent}} %
                             </mat-list-option>
                             <mat-list-option>
-                                Battery temperature: {{lastElement.batTemperature}} C
+                                Battery temperature: {{liveData.batTemperature}} C
                             </mat-list-option>
                             <mat-list-option>
-                                Battery status: {{lastElement.batStatus}}
+                                Battery status: {{liveData.batStatus}}
                             </mat-list-option>
                             <mat-list-option>
-                                Battery charging status: {{lastElement.batChargingStatus}}
+                                Battery charging status: {{liveData.batChargingStatus}}
                             </mat-list-option>
                             <mat-list-option>
-                                Battery discharging status: {{lastElement.batDischargingStatus}}
+                                Battery discharging status: {{liveData.batDischargingStatus}}
                             </mat-list-option>
 
                         </mat-selection-list>
@@ -96,16 +96,16 @@
             <mat-card-content>
                 <mat-selection-list [multiple]="false">
                     <mat-list-option>
-                        Load voltage: {{lastElement.loadVoltage}} V
+                        Load voltage: {{liveData.loadVoltage}} V
                     </mat-list-option>
                     <mat-list-option>
-                        Load current: {{lastElement.loadCurrent}} A
+                        Load current: {{liveData.loadCurrent}} A
                     </mat-list-option>
                     <mat-list-option>
-                        Load power: {{lastElement.loadPower}} W
+                        Load power: {{liveData.loadPower}} W
                     </mat-list-option>
                     <mat-list-option>
-                        Load status: {{lastElement.loadStatus}}
+                        Load status: {{liveData.loadStatus}}
                     </mat-list-option>
                 </mat-selection-list>
             </mat-card-content>

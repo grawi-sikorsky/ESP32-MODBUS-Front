@@ -11,12 +11,13 @@ export class PanelComponent implements OnInit {
   constructor(public dataService: DataService) { }
 
   ngOnInit(): void {
-    this.dataService.currentDataModel.subscribe(data => {
-      this.lastElement = this.dataService.dataModel[this.dataService.dataModel.length-1];
+    this.dataService.getLiveData("whatever..");
+    this.dataService.currentLiveDataModel.subscribe(data => {
+      this.liveData = data;
     })
   }
 
-  lastElement:any;
+  liveData:any;
   displayedColumns: string[] = ['genTotalToday', 'genTotalToday'];
 
 }
