@@ -16,13 +16,19 @@ export class ChartComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.currentDataModel.subscribe(data => {
       if (data.length > 0) {
+        let i = 0;
         this.chartRawData = data;
-
+        
         this.chartRawData?.forEach(element => {
-          this.dataListBat.push(Number(element.batVoltage!));
-          this.dataListPV.push(Number(element.pvVoltage!));
-          this.dataListLoad.push(Number(element.loadVoltage!));
-          this.ldataLabels.push(formatDate(element.recordTime!, 'HH:mm:ss dd/MM/yyyy', 'en-US'));
+          if(i == 7){
+            this.dataListBat.push(Number(element.batVoltage!));
+            this.dataListPV.push(Number(element.pvVoltage!));
+            this.dataListLoad.push(Number(element.loadVoltage!));
+            this.ldataLabels.push(formatDate(element.recordTime!, 'HH:mm:ss dd/MM/yyyy', 'en-US'));
+            i = 0;
+          }
+          i++;
+
         });
 
         this.ldataSet.push({
