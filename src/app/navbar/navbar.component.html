@@ -4,7 +4,10 @@
             <img src="/favicon.ico" alt="" width="42" height="42" class="d-inline-block"> ModbusFront
         </a>
 
-        <button mat-raised-button (click)="onSettingsClick()"> <mat-icon>settings</mat-icon> Ustawienia </button>
-
+        <button mat-raised-button [matMenuTriggerFor]="menu"><mat-icon>settings</mat-icon> Ustawienia </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="onSettingsClick()"> <mat-icon>app_settings_alt</mat-icon> Ustawienia MPPT </button>
+          <button mat-menu-item (click)="onSettingsClick()"> <mat-icon>settings</mat-icon> Ustawienia panelu </button>
+        </mat-menu>
     </div>
 </nav>
