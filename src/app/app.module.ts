@@ -18,6 +18,7 @@ import { OveralsComponent } from './overals/overals.component';
 import { ChartCurrentComponent } from './charts-view/chart-current/chart-current.component';
 import { ChartLoadComponent } from './charts-view/chart-load/chart-load.component';
 import { PanelComponent } from './panel/panel.component';
+import { ModbussetupDialogComponent } from './modbussetup-dialog/modbussetup-dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PanelComponent } from './panel/panel.component';
     OveralsComponent,
     ChartCurrentComponent,
     ChartLoadComponent,
-    PanelComponent
+    PanelComponent,
+    ModbussetupDialogComponent
   ],
   imports: [
     BrowserModule,

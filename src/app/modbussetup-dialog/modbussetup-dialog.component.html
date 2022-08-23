@@ -1,0 +1,71 @@
+<mat-dialog-content>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col" style="text-align: center;">
+                <h3>Remote MPPT CONTROLLER SETUP</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline" class="mat-form-field-outcome">
+                    <mat-label>Rated voltage 311D: </mat-label>
+                    <input matInput [(ngModel)]="dataService.setupModel.modbusID">
+                    <!-- <mat-icon matSuffix>attach_money</mat-icon> -->
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field appearance="outline" class="mat-form-field-outcome">
+                    <mat-label>Rated load current 300E: </mat-label>
+                    <input matInput [(ngModel)]="dataService.setupModel.modbusID">
+                    <!-- <mat-icon matSuffix>attach_money</mat-icon> -->
+                </mat-form-field>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="outline" class="mat-form-field-outcome">
+                    <mat-label>ModbusID: </mat-label>
+                    <input matInput [(ngModel)]="dataService.setupModel.modbusID">
+                    <!-- <mat-icon matSuffix>attach_money</mat-icon> -->
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field appearance="outline" class="mat-form-field-outcome">
+                    <mat-label>ModbusID: </mat-label>
+                    <input matInput [(ngModel)]="dataService.setupModel.modbusID">
+                    <!-- <mat-icon matSuffix>attach_money</mat-icon> -->
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row"> 
+            <mat-form-field appearance="outline" class="mat-form-field-outcome">
+                <mat-label>Readings update interval: </mat-label>
+                <input matInput type="number" [(ngModel)]="dataService.setupModel.readingUpdateInterval">
+                <!-- <mat-icon matSuffix>attach_money</mat-icon> -->
+            </mat-form-field>
+        </div>
+        <div class="row"> 
+            <mat-form-field appearance="outline" class="mat-form-field-outcome">
+                <mat-label>POST update interval: </mat-label>
+                <input matInput type="number" [(ngModel)]="dataService.setupModel.postUpdateInterval">
+                <!-- <mat-icon matSuffix>attach_money</mat-icon> -->
+            </mat-form-field>
+        </div>
+        <div class="row"> 
+            <mat-form-field appearance="outline" class="mat-form-field-outcome">
+                <mat-label>GET settings interval: </mat-label>
+                <input matInput type="number" [(ngModel)]="dataService.setupModel.setupUpdateInterval">
+                <!-- <mat-icon matSuffix>attach_money</mat-icon> -->
+            </mat-form-field>
+        </div>
+
+        <div class="row" style="display: center;">
+            <button mat-raised-button mat-dialog-close color="primary" (click)="onSaveSettings()"> <mat-icon>settings</mat-icon> Zapisz ustawienia na urzadzeniu zdalnym </button>
+            <div style="padding-top: 10px; padding-bottom: 10px;"><mat-divider></mat-divider></div>
+            <button mat-raised-button mat-dialog-close color=""><mat-icon>close</mat-icon> Close</button>
+            <div style="padding-top: 5px; padding-bottom: 5px;"></div>
+        </div>
+    </div>
+</mat-dialog-content>
