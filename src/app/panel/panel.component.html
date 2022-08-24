@@ -1,5 +1,6 @@
 <div class="row">
-    <div class="col-3">
+
+    <div class="col">
         <mat-card class="example-card">
             <mat-card-title>PV Stats</mat-card-title>
             <mat-card-subtitle>Data from pv string</mat-card-subtitle>
@@ -17,79 +18,67 @@
                     <mat-list-option>
                         PV Status: {{liveData.pvStatus}}
                     </mat-list-option>
+                    <mat-list-option>
+                        Last sync: {{liveData.recordTime | date:'d/M/yyyy, hh:mm'}}
+                    </mat-list-option>
                 </mat-selection-list>
             </mat-card-content>
-            <mat-card-actions>
-                <button mat-button>LIKE</button>
-                <button mat-button>SHARE</button>
-            </mat-card-actions>
         </mat-card>
     </div>
-    <div class="col-6">
-        <div class="row">
-            <div class="col">
-                <mat-card class="example-card">
-                    <mat-card-title>Battery Stats</mat-card-title>
-                    <mat-card-subtitle>Data from battery</mat-card-subtitle>
-                    <mat-card-content>
-                        <mat-selection-list [multiple]="false">
-                            <mat-list-option>
-                                Battery voltage: {{liveData.batVoltage}} V
-                            </mat-list-option>
-                            <mat-list-option>
-                                Battery charging current: {{liveData.batChargingCurrent}} A
-                            </mat-list-option>
-                            <mat-list-option>
-                                Battery charging power: {{liveData.batChargingPower}} W
-                            </mat-list-option>
-                            <mat-list-option>
-                                Battery discharging current: {{liveData.batDischargeCurrent}} A
-                            </mat-list-option>
-                            <mat-list-option>
-                                Battery overal current: {{liveData.batOverallCurrent}} A
-                            </mat-list-option>
-                        </mat-selection-list>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <button mat-button>LIKE</button>
-                        <button mat-button>SHARE</button>
-                    </mat-card-actions>
-                </mat-card>
-            </div>
-            <div class="col">
-                <mat-card class="example-card">
-                    <mat-card-title>Battery Stats</mat-card-title>
-                    <mat-card-subtitle>Data from battery</mat-card-subtitle>
-                    <mat-card-content>
-                        <mat-selection-list [multiple]="false">
-                            <mat-list-option>
-                                Battery remaining percent [SOC] : {{liveData.batRemainingPercent}} %
-                            </mat-list-option>
-                            <mat-list-option>
-                                Battery temperature: {{liveData.batTemperature}} C
-                            </mat-list-option>
-                            <mat-list-option>
-                                Battery status: {{liveData.batStatus}}
-                            </mat-list-option>
-                            <mat-list-option>
-                                Battery charging status: {{liveData.batChargingStatus}}
-                            </mat-list-option>
-                            <mat-list-option>
-                                Battery discharging status: {{liveData.batDischargingStatus}}
-                            </mat-list-option>
 
-                        </mat-selection-list>
-                    </mat-card-content>
-                    <mat-card-actions>
-                        <button mat-button>LIKE</button>
-                        <button mat-button>SHARE</button>
-                    </mat-card-actions>
-                </mat-card>
-            </div>
-        </div>
+    <div class="col">
+        <mat-card class="example-card">
+            <mat-card-title>Battery Stats</mat-card-title>
+            <mat-card-subtitle>Data from battery</mat-card-subtitle>
+            <mat-card-content>
+                <mat-selection-list [multiple]="false">
+                    <mat-list-option>
+                        Battery voltage: {{liveData.batVoltage}} V
+                    </mat-list-option>
+                    <mat-list-option>
+                        Battery charging current: {{liveData.batChargingCurrent}} A
+                    </mat-list-option>
+                    <mat-list-option>
+                        Battery charging power: {{liveData.batChargingPower}} W
+                    </mat-list-option>
+                    <mat-list-option>
+                        Battery discharging current: {{liveData.batDischargeCurrent}} A
+                    </mat-list-option>
+                    <mat-list-option>
+                        Battery overal current: {{liveData.batOverallCurrent}} A
+                    </mat-list-option>
+                </mat-selection-list>
+            </mat-card-content>
+        </mat-card>
     </div>
 
-    <div class="col-3">
+    <div class="col">
+        <mat-card class="example-card">
+            <mat-card-title>Battery Stats</mat-card-title>
+            <mat-card-subtitle>Data from battery</mat-card-subtitle>
+            <mat-card-content>
+                <mat-selection-list [multiple]="false">
+                    <mat-list-option>
+                        Battery remaining [SOC] : {{liveData.batRemainingPercent}} %
+                    </mat-list-option>
+                    <mat-list-option>
+                        Battery temperature: {{liveData.batTemperature}} ºC
+                    </mat-list-option>
+                    <mat-list-option>
+                        Battery status: {{liveData.batStatus}}
+                    </mat-list-option>
+                    <mat-list-option>
+                        Battery charging status: {{liveData.batChargingStatus}}
+                    </mat-list-option>
+                    <mat-list-option>
+                        Battery discharging status: {{liveData.batDischargingStatus}}
+                    </mat-list-option>
+                </mat-selection-list>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col">
         <mat-card class="example-card">
             <mat-card-title>Load Stats</mat-card-title>
             <mat-card-subtitle>Stats on your output</mat-card-subtitle>
@@ -107,12 +96,11 @@
                     <mat-list-option>
                         Load status: {{liveData.loadStatus}}
                     </mat-list-option>
+                    <mat-list-option>
+                        MPPT temperature: {{liveData.mpptTemperature}} ºC
+                    </mat-list-option>
                 </mat-selection-list>
             </mat-card-content>
-            <mat-card-actions>
-                <button mat-button>LIKE</button>
-                <button mat-button>SHARE</button>
-            </mat-card-actions>
         </mat-card>
     </div>
 </div>
