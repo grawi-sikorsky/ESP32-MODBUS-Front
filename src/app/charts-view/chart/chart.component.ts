@@ -93,7 +93,7 @@ export class ChartComponent implements OnInit {
     maintainAspectRatio: false,
     plugins: {
       title: {
-        display: true,
+        display: false,
         text: 'Voltage Chart',
       },
       tooltip:{

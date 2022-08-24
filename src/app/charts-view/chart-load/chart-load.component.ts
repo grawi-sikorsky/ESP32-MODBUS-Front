@@ -75,7 +75,7 @@ export class ChartLoadComponent implements OnInit {
   ldataLabels: string[] = [];
   ldataSet: any = [];
 
-  currentChartData: ChartData<'line'> = {
+  loadChartData: ChartData<'line'> = {
     labels: this.ldataLabels,
     datasets: this.ldataSet,
   };
@@ -88,7 +88,7 @@ export class ChartLoadComponent implements OnInit {
     maintainAspectRatio: false,
     plugins: {
       title: {
-        display: true,
+        display: false,
         text: 'Power Chart',
       },
       tooltip:{

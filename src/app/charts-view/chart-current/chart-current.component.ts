@@ -92,7 +92,7 @@ export class ChartCurrentComponent implements OnInit {
     maintainAspectRatio: false,
     plugins: {
       title: {
-        display: true,
+        display: false,
         text: 'Current Chart',
       },
       tooltip:{
