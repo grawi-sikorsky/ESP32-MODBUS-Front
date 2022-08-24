@@ -2,20 +2,32 @@
   .mat-list-base .mat-list-option {
     font-size: 9px!important;
   }
+  .mat-list-base .mat-list-item, .mat-list-base .mat-list-option{
+    height: 15px;
+  }
 }
-@media only screen and (max-width: 850px) {
+@media only screen and (min-width: 451px) and (max-width: 767px) {
   .mat-list-base .mat-list-option {
     font-size: 10px!important;
   }
+  .mat-list-base .mat-list-item, .mat-list-base .mat-list-option{
+    height: 16px;
+  }
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 768px) and (max-width: 1160px) {
   .mat-list-base .mat-list-option {
     font-size: 10px!important;
   }
+  .mat-list-base .mat-list-item, .mat-list-base .mat-list-option{
+    height: 16px;
+  }
 }
-@media only screen and (max-width: 1600px) {
+@media only screen and (min-width: 1161px) {
   .mat-list-base .mat-list-option {
-    font-size: 12px!important;
+    font-size: 14px!important;
+  }
+  .mat-list-base .mat-list-item, .mat-list-base .mat-list-option{
+    height: 22px;
   }
 }
 
@@ -25,9 +37,6 @@
     min-width: 210px;
 }
 
-.mat-list-base .mat-list-item, .mat-list-base .mat-list-option{
-  height: 16px;
-}
 .mat-card-title{
   font-size: 14px;
 }
