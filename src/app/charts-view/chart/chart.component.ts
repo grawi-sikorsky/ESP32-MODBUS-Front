@@ -24,7 +24,7 @@ export class ChartComponent implements OnInit {
             this.dataListBat.push(Number(element.batVoltage!));
             this.dataListPV.push(Number(element.pvVoltage!));
             this.dataListLoad.push(Number(element.loadVoltage!));
-            this.ldataLabels.push(formatDate(element.recordTime!, 'HH:mm:ss dd/MM/yyyy', 'en-US'));
+            this.ldataLabels.push(formatDate(element.recordTime!, 'HH:mm:ss dd/MM/yy', 'en-US'));
             i = 0;
           }
           i++;
