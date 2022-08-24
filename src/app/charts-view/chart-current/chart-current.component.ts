@@ -89,6 +89,7 @@ export class ChartCurrentComponent implements OnInit {
   lineChartType = 'line';
   chartOptions: ChartOptions = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       title: {
         display: true,

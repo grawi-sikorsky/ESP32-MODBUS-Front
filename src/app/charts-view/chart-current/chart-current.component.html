@@ -1,6 +1,6 @@
-<div class="col chart-wrapper" *ngIf="ldataSet.length > 0">
+<div class="chart" *ngIf="ldataSet.length > 0">
     <canvas baseChart
-    style="height: 200px; display: block;"
+    style="width: 900px; height: 400px;"
         [data]="currentChartData"
         [legend]="lineChartLegend" 
         [plugins]="lineChartPlugins"

@@ -1,0 +1,27 @@
+.chart-tab{
+    max-height: 400px;
+}
+.mat-tab-body-content{
+    max-height: 350px;
+    height: 350px;
+}
+
+.charts-accordion .mat-expansion-panel-header-title,
+.charts-accordion .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.charts-accordion .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mat-expansion-panel{
+    transition: none;
+}
+.mat-accordion{
+    transition: none;
+}
+.example-action-buttons{
+    transition: none;
+}
