@@ -1,7 +1,7 @@
 <div class="chart" *ngIf="ldataSet.length > 0">
     <canvas baseChart
     style="width: 900px; height: 400px;"
-        [data]="currentChartData"
+        [data]="loadChartData"
         [legend]="lineChartLegend" 
         [plugins]="lineChartPlugins"
         [options]="chartOptions"

@@ -2,7 +2,7 @@
 
     <div class="col">
         <mat-card class="example-card">
-            <mat-card-title>PV Stats</mat-card-title>
+            <mat-card-title> <mat-icon style="vertical-align: middle;">light_mode</mat-icon> PV Stats</mat-card-title>
             <mat-card-subtitle>Data from pv string</mat-card-subtitle>
             <mat-card-content>
                 <mat-selection-list [multiple]="false">
@@ -19,7 +19,7 @@
                         PV Status: {{liveData.pvStatus}}
                     </mat-list-option>
                     <mat-list-option>
-                        Last sync: {{liveData.recordTime | date:'d/M/yyyy, hh:mm'}}
+                        Last sync: {{liveData.recordTime | date:'d/M/yyyy, HH:mm'}}
                     </mat-list-option>
                 </mat-selection-list>
             </mat-card-content>
@@ -28,7 +28,7 @@
 
     <div class="col">
         <mat-card class="example-card">
-            <mat-card-title>Battery Stats</mat-card-title>
+            <mat-card-title><mat-icon style="vertical-align: middle;">battery_charging_full</mat-icon> Battery Stats</mat-card-title>
             <mat-card-subtitle>Data from battery</mat-card-subtitle>
             <mat-card-content>
                 <mat-selection-list [multiple]="false">
@@ -54,7 +54,7 @@
 
     <div class="col">
         <mat-card class="example-card">
-            <mat-card-title>Battery Stats</mat-card-title>
+            <mat-card-title><mat-icon style="vertical-align: middle;">battery_charging_full</mat-icon> Battery Stats</mat-card-title>
             <mat-card-subtitle>Data from battery</mat-card-subtitle>
             <mat-card-content>
                 <mat-selection-list [multiple]="false">
@@ -80,7 +80,7 @@
 
     <div class="col">
         <mat-card class="example-card">
-            <mat-card-title>Load Stats</mat-card-title>
+            <mat-card-title><mat-icon style="vertical-align: middle;">electrical_services</mat-icon> Load Stats</mat-card-title>
             <mat-card-subtitle>Stats on your output</mat-card-subtitle>
             <mat-card-content>
                 <mat-selection-list [multiple]="false">
@@ -106,7 +106,7 @@
 
     <div class="col">
         <mat-card class="example-card">
-            <mat-card-title>Overals</mat-card-title>
+            <mat-card-title><mat-icon style="vertical-align: middle;">functions</mat-icon> Overals</mat-card-title>
             <mat-card-subtitle>Total consumed and generated energy</mat-card-subtitle>
             <mat-card-content>
                 <mat-selection-list [multiple]="false">

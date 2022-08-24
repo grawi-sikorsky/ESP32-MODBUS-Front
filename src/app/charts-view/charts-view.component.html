@@ -1,5 +1,33 @@
-<mat-tab-group>
-    <mat-tab label="Voltage Chart"> <app-chart></app-chart> </mat-tab>
-    <mat-tab label="Current Chart"> <app-chart-current></app-chart-current> </mat-tab>
-    <mat-tab label="Power Chart"> <app-chart-load></app-chart-load> </mat-tab>
-</mat-tab-group>
+<mat-accordion class="charts-accordion">
+    <mat-expansion-panel expanded>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <span> <mat-icon style="vertical-align: middle;">bolt</mat-icon> Voltage Chart</span>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <app-chart></app-chart>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <span><mat-icon style="vertical-align: middle;">bolt</mat-icon>Current Chart</span>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <app-chart-current></app-chart-current>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <span><mat-icon style="vertical-align: middle;">bolt</mat-icon>Power Chart </span>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <app-chart-load></app-chart-load>
+    </mat-expansion-panel>
+</mat-accordion>
