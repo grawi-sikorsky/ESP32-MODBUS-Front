@@ -103,4 +103,39 @@
             </mat-card-content>
         </mat-card>
     </div>
+
+    <div class="col">
+        <mat-card class="example-card">
+            <mat-card-title>Overals</mat-card-title>
+            <mat-card-subtitle>Total consumed and generated energy</mat-card-subtitle>
+            <mat-card-content>
+                <mat-selection-list [multiple]="false">
+                    <mat-list-option>
+                        Energy generated today: {{liveData.genTotalToday}} kWh
+                    </mat-list-option>
+                    <mat-list-option>
+                        Energy generated this month: {{liveData.genTotalMonth}} kWh
+                    </mat-list-option>
+                    <mat-list-option>
+                        Energy generated this year: {{liveData.genTotalYear}} kWh
+                    </mat-list-option>
+                    <mat-list-option>
+                        Energy generated all time: {{liveData.genTotalAll}} kWh
+                    </mat-list-option>
+                    <mat-list-option>
+                        Energy consumed today: {{liveData.consTotalToday}} kWh
+                    </mat-list-option>
+                    <mat-list-option>
+                        Energy consumed this month: {{liveData.consTotalMonth}} kWh
+                    </mat-list-option>
+                    <mat-list-option>
+                        Energy consumed this year: {{liveData.consTotalYear}} kWh
+                    </mat-list-option>
+                    <mat-list-option>
+                        Energy consumed this all time: {{liveData.consTotalAll}} kWh
+                    </mat-list-option>
+                </mat-selection-list>
+            </mat-card-content>
+        </mat-card>
+    </div>
 </div>
