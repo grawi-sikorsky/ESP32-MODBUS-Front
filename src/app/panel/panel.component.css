@@ -1,7 +1,7 @@
 .example-card {
     margin-top: 10px;
     margin-bottom: 10px;
-    min-width: 250px;
+    min-width: 300px;
 }
 
 .mat-list-base .mat-list-option {
@@ -9,4 +9,12 @@
 }
 .mat-list-base .mat-list-item, .mat-list-base .mat-list-option{
   height: 24px;
+}
+.mat-card-title{
+  font-size: 16px;
+}
+
+.mat-card-subtitle{
+  font-size: 10px;
+  margin-bottom: 3px;
 }
