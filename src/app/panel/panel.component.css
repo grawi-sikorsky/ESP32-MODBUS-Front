@@ -1,11 +1,16 @@
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 450px) {
+  .mat-list-base .mat-list-option {
+    font-size: 9px!important;
+  }
+}
+@media only screen and (max-width: 850px) {
   .mat-list-base .mat-list-option {
     font-size: 10px!important;
   }
 }
 @media only screen and (max-width: 1200px) {
   .mat-list-base .mat-list-option {
-    font-size: 11px!important;
+    font-size: 10px!important;
   }
 }
 @media only screen and (max-width: 1600px) {
@@ -17,7 +22,7 @@
 .example-card {
     margin-top: 6px;
     margin-bottom: 6px;
-    min-width: 200px;
+    min-width: 210px;
 }
 
 .mat-list-base .mat-list-item, .mat-list-base .mat-list-option{
