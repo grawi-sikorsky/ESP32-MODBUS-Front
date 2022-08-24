@@ -11,8 +11,70 @@
 
     <div class="row">
         <div class="col">
-            <app-charts-view></app-charts-view>
+            <!-- <app-charts-view></app-charts-view> -->
+
+            <!-- <mat-tab-group>
+                <mat-tab class="chart-tab" label="Voltage Chart"> <app-chart></app-chart></mat-tab>
+                <mat-tab class="chart-tab" label="Current Chart"> <app-chart-current></app-chart-current></mat-tab>
+                <mat-tab class="chart-tab" label="Power Chart"> <app-chart-load></app-chart-load></mat-tab>
+            </mat-tab-group> -->
+
+            <!-- <app-chart></app-chart>
+            <app-chart-current></app-chart-current>
+            <app-chart-load></app-chart-load> -->
+
+            <div class="example-action-buttons">
+                <!-- <button mat-button (click)="accordion.openAll()">Expand All</button>
+                <button mat-button (click)="accordion.closeAll()">Collapse All</button> -->
+              </div>
+              <mat-accordion class="charts-accordion" multi>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Voltage Chart
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      Type your name and age
+                      <mat-icon>account_circle</mat-icon>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+              
+                  <app-chart></app-chart>
+              
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Current Chart
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      Type the country name
+                      <mat-icon>map</mat-icon>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+
+                  <app-chart-current></app-chart-current>
+
+                </mat-expansion-panel>
+              
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Power Chart
+                    </mat-panel-title>
+                    <mat-panel-description>
+                      Inform the date you wish to travel
+                      <mat-icon>date_range</mat-icon>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+
+                    <app-chart-load></app-chart-load>
+                </mat-expansion-panel>
+              </mat-accordion>
+
         </div>
+
     </div>
 
     <div class="row">
