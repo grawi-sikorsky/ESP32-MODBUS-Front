@@ -32,7 +32,21 @@ export class ChartComponent implements OnInit {
         this.chartRawData = data;
         
         this.chartRawData?.forEach(element => {
-          if(i == 1){
+          if(this.rangeSelection === '24h' && i == 1){
+            this.dataListBat.push(Number(element.batVoltage!));
+            this.dataListPV.push(Number(element.pvVoltage!));
+            this.dataListLoad.push(Number(element.loadVoltage!));
+            this.ldataLabels.push(formatDate(element.recordTime!, 'HH:mm:ss dd/MM/yy', 'en-US'));
+            i = 0;
+          }
+          if(this.rangeSelection === '30d' && i == 6){
+            this.dataListBat.push(Number(element.batVoltage!));
+            this.dataListPV.push(Number(element.pvVoltage!));
+            this.dataListLoad.push(Number(element.loadVoltage!));
+            this.ldataLabels.push(formatDate(element.recordTime!, 'HH:mm:ss dd/MM/yy', 'en-US'));
+            i = 0;
+          }
+          if(this.rangeSelection === 'all' && i == 12){
             this.dataListBat.push(Number(element.batVoltage!));
             this.dataListPV.push(Number(element.pvVoltage!));
             this.dataListLoad.push(Number(element.loadVoltage!));
@@ -56,7 +70,7 @@ export class ChartComponent implements OnInit {
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: 'rgba(120,220,140,0.8)',
           fill: false,
-          lineTension: 0.5,
+          lineTension: 0.2,
         })
 
         this.ldataSet.push({
@@ -70,7 +84,7 @@ export class ChartComponent implements OnInit {
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: 'rgba(202,159,177,0.8)',
           fill: false,
-          lineTension: 0.5,
+          lineTension: 0.2,
         })
 
         this.ldataSet.push({
@@ -96,10 +110,10 @@ export class ChartComponent implements OnInit {
       this.dataService.getDataInRange("?start=2022-08-25T06:30:30Z&end=2022-08-25T11:59:32Z" );
     }
     else if(range == '30d'){
-      this.dataService.getDataInRange("?start=2022-08-24T06:30:30Z&end=2022-08-25T11:59:32Z" );
+      this.dataService.getDataInRange("?start=2022-08-23T06:30:30Z&end=2022-08-25T11:59:32Z" );
     }
     else if( range == 'all'){
-      this.dataService.getDataInRange("?start=2022-08-22T06:30:30Z&end=2022-08-25T11:59:32Z" );
+      this.dataService.getDataInRange("?start=2022-08-20T06:30:30Z&end=2022-08-25T11:59:32Z" );
     }
     
     this.dataService.currentDataModel.subscribe(data => {
