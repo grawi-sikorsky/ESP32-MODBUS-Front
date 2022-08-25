@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataModel } from '../../model/data-model';
 import { ChartData, ChartDataset, ChartOptions } from 'chart.js';
-import { formatDate } from '@angular/common';
+import { DatePipe, formatDate } from '@angular/common';
 import { DataService } from '../../service/data.service';
+import { FormControl } from '@angular/forms';
+import { BaseChartDirective } from 'ng2-charts';
 
 @Component({
   selector: 'app-chart',
@@ -13,14 +15,24 @@ export class ChartComponent implements OnInit {
 
   constructor(public dataService: DataService) { }
 
+  @ViewChild( BaseChartDirective ) chart?: BaseChartDirective;
+
+  rangeSelection: string = "24h";
+
   ngOnInit(): void {
     this.dataService.currentDataModel.subscribe(data => {
+      
+      this.dataListBat.length = 0;
+      this.dataListLoad.length = 0;
+      this.dataListPV.length = 0;
+      this.ldataLabels.length = 0;
+
       if (data.length > 0) {
         let i = 0;
         this.chartRawData = data;
         
         this.chartRawData?.forEach(element => {
-          if(i == 7){
+          if(i == 1){
             this.dataListBat.push(Number(element.batVoltage!));
             this.dataListPV.push(Number(element.pvVoltage!));
             this.dataListLoad.push(Number(element.loadVoltage!));
@@ -31,9 +43,12 @@ export class ChartComponent implements OnInit {
 
         });
 
+
+
         this.ldataSet.push({
           data: this.dataListBat,
           label: "Battery voltage",
+          yAxisID: 'yload',
           backgroundColor: 'rgba(120,220,140,0.5)',
           borderColor: 'rgba(120,220,140,1)',
           pointBackgroundColor: 'rgba(120,220,140,1)',
@@ -47,6 +62,7 @@ export class ChartComponent implements OnInit {
         this.ldataSet.push({
           data: this.dataListPV,
           label: "PV voltage",
+          yAxisID: 'yload',
           backgroundColor: 'rgba(202,159,177,0.5)',
           borderColor: 'rgba(220,159,177,1)',
           pointBackgroundColor: 'rgba(220,159,177,1)',
@@ -60,6 +76,7 @@ export class ChartComponent implements OnInit {
         this.ldataSet.push({
           data: this.dataListLoad,
           label: "Load voltage",
+          yAxisID: 'yload',
           backgroundColor: 'rgba(100,159,220,0.5)',
           borderColor: 'rgba(100,159,220,1)',
           pointBackgroundColor: 'rgba(100,159,220,1)',
@@ -72,6 +89,26 @@ export class ChartComponent implements OnInit {
       }
     })
   }
+
+  ref(range:string){
+    //let dateNow = new Date().toISOString(); formatDate(dateNow,"MMM d, y H:mm:ss'", 'pl_PL');
+    if(range == '24h'){
+      this.dataService.getDataInRange("?start=2022-08-25T06:30:30Z&end=2022-08-25T11:59:32Z" );
+    }
+    else if(range == '30d'){
+      this.dataService.getDataInRange("?start=2022-08-24T06:30:30Z&end=2022-08-25T11:59:32Z" );
+    }
+    else if( range == 'all'){
+      this.dataService.getDataInRange("?start=2022-08-22T06:30:30Z&end=2022-08-25T11:59:32Z" );
+    }
+    
+    this.dataService.currentDataModel.subscribe(data => {
+      this.chart?.chart?.update();
+    })
+    this.ldataSet = this.ldataSet.slice();
+  }
+
+  
 
   chartRawData?: DataModel[] = [];
   dataListBat: number[] = [];
@@ -101,6 +138,20 @@ export class ChartComponent implements OnInit {
         intersect: false,
       }
     },
+    scales: {
+      yAxes: {
+        
+        position: 'left',
+        type: 'linear',
+        ticks: {
+          callback: value => 2 % 400 ? null : value
+        }
+        // scaleLabel: {
+        //   display: true,
+        //   labelString: 'Claims Count'
+        // }
+      },
+    }
   };
 
   public chartColors: Array<any> = [

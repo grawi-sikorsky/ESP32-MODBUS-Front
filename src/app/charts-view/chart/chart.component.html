@@ -1,3 +1,13 @@
+<div class="row">
+    <div class="col range-selection">
+        <mat-button-toggle-group [(ngModel)]="rangeSelection" >
+            <mat-button-toggle value="all" (click)="ref(rangeSelection)">Alltime</mat-button-toggle>
+            <mat-button-toggle value="30d" (click)="ref(rangeSelection)">30 days</mat-button-toggle>
+            <mat-button-toggle value="24h" (click)="ref(rangeSelection)">24 hours</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+</div>
+
 <div class="chart" *ngIf="ldataSet.length > 0">
     <canvas baseChart
     style="width: 900px; height: 400px;"

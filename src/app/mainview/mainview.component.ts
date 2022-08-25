@@ -17,8 +17,8 @@ export class MainviewComponent implements OnInit {
   }
 
   buttonGET(){
+    this.dataService.getDataInRange("?start=2022-08-25T06:30:30Z&end=2022-08-25T09:59:32Z");
     this.dataService.updateDataModel(this.dataService.dataModel);
-    this.dataService.getData("cokolwiek");
   }
 
 }
