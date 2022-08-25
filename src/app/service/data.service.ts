@@ -52,9 +52,15 @@ export class DataService {
     return this.http.get<DataModel[]>( "https://modbus-back.herokuapp.com/data").subscribe( data => {
         this.updateDataModel(data);
         this.dataModel = data;
-        this.dataModel.forEach( element  => {
+      });
+  }
 
-        });
+  public getDataInRange(rangeDateString:String)
+  {
+    return this.http.get<DataModel[]>( "https://modbus-back.herokuapp.com/data/range" + rangeDateString).subscribe( data => {
+        this.updateDataModel(data);
+        this.dataModel = data;
+        console.warn(data);
       });
   }
 

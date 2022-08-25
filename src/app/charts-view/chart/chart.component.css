@@ -2,4 +2,7 @@
     position: relative;
     min-height: unset;
     display: block;
-  }
+}
+.range-selection{
+  text-align: center;
+}

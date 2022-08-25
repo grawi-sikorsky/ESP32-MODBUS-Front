@@ -16,7 +16,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.currentDataModel.subscribe(data => {
     })
-    this.dataService.getData("cokolwiek");
   }
 
   public onSettingsClick(): void {
