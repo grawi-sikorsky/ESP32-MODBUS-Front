@@ -1,27 +1,21 @@
-# ModbusFront
+## MODBUS Panel
+This is a project of web panel for any supported solar charging controllers with MODBUS interface (RJ11 or RJ45).
+It's able to gather all informations about solar charging system (charging voltage/current, battery states etc) store it in database, and display in web panel.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.6.
+It have 3 modules:
 
-## Development server
+# 1) ESP32-MODBUS-Remote
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+  It's written in C++ part of project for embedded modules like ESP32. It have to be connected with solar charger controller via MODBUS interface (2-4 wires).
+  It's responsible for gathering all data from solar charger (like charging voltage, battery voltage, charging current, draw current etc). 
+  Module is sending all informations via available wifi to backend part of project. Can be configured via web-panel.
 
-## Code scaffolding
+# 2) ESP32-MODBUS-Backend [this]
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Backend side of control panel written in Java with SpringBoot. Delivers API for Remote ESP32 to gather all informations sended by that module.
+Stores data in docker postgreSQL database or H2 db (for developing purposes). 
+Additionally it have API for Frontend part of the application to display all gathered informations about solar charging process.
 
-## Build
+# 3) ESP32-MODBUS-Frontend
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Frontend written in TypeScript / Angular, shows all data and timeline.
